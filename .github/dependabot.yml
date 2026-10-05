@@ -1,0 +1,28 @@
+version: 2
+updates:
+  # Workflow actions. Keeps SHA-pinned actions current (rewrites the SHA and
+  # the trailing "# vX" comment together).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        patterns: ["*"]
+
+  # Base images referenced by FROM lines in ./Dockerfile
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: docker
+    groups:
+      base-images:
+        patterns: ["*"]
