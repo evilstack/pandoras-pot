@@ -67,7 +67,7 @@ jobs:
         run: cp local/patches/Cargo.lock Cargo.lock
 
       - name: Run Cargo Audit
-        continue-on-error: true # temporary
+        # continue-on-error: true
         uses: rustsec/audit-check@69366f33c96575abad1ee0dba8212993eecbe998 # v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
