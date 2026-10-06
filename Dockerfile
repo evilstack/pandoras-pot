@@ -58,4 +58,5 @@ USER 10666:10666
 
 EXPOSE 8080
 
-CMD ["./pandoras_pot", "--config", "config.toml"]
+ENTRYPOINT ["./pandoras_pot"]
+CMD ["./config.toml"]
