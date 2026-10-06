@@ -64,7 +64,7 @@ prefix = "<!DOCTYPE html><html><body>"
 
 [logging]
 # Output file for logs.
-output_path = "pandora.log"
+output_path = "/dev/null"
 
 # If pretty logs should be written to standard output.
 print_pretty_logs = true
