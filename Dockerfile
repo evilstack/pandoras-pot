@@ -22,6 +22,8 @@ FROM chef AS builder
 # Smaller, faster binary without modifying upstream's Cargo.toml
 ENV CARGO_PROFILE_RELEASE_LTO=true \
     CARGO_PROFILE_RELEASE_STRIP=true \
+    CARGO_PROFILE_RELEASE_PANIC="abort" \
+    CARGO_PROFILE_RELEASE_OPT_LEVEL="s" \
     CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
 
 # Dependencies only: this layer is reused until Cargo.toml/Cargo.lock change
